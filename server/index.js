@@ -22,7 +22,11 @@ mongoose
 
 app.use(express.json({limit:"150mb"}));
 app.use(express.urlencoded({ extended: true, limit:"150mb"}));
-app.use(cors());
+
+// MKAE origin: true for localhost 
+app.use(cors({
+  origin: [ "https://recipieclub.onrender.com" ] 
+}));
 
 
 
