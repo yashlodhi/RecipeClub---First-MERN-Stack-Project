@@ -1,0 +1,608 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&family=Grape+Nuts&family=Roboto&family=Roboto:wght@100&family=Quicksand&family=M+PLUS+Rounded+1c&family=Signika+Negative&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  font-family: "Quicksand", sans-serif;
+  background: rgb(253, 253, 253);
+  background-color: rgb(253, 250, 246);
+  overflow-y: scroll;
+  /* background: linear-gradient(90deg, rgba(251,255,0,1) 0%, rgba(246,255,144,1) 29%, rgba(248,255,206,1) 51%, rgba(246,255,144,1) 75%, rgba(251,255,0,1) 100%); */
+}
+
+::selection{
+  background-color: rgb(0, 110, 255);
+  color: white;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(0, 110, 255);
+  padding: 0.75rem;
+}
+
+#nav-right {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding-top: 0.75rem;
+}
+
+#nav-right a {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 3rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-right a::after {
+  content: " ";
+  height: 0.15rem;
+  background-color: rgb(255, 255, 255);
+  width: 0%;
+  transition: 0.25s ease;
+}
+#nav-right a:hover {
+  transform: scale(1.075);
+}
+#nav-right a:hover::after {
+  width: 100%;
+}
+#WebName {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#WebName a {
+  color: rgb(255, 255, 0);
+  font-size: 3rem;
+  font-family: "Signika Negative", sans-serif;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+
+.search {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 1rem;
+}
+#search-bar {
+  text-align: center;
+  width: 50%;
+  height: 0.1rem;
+  padding: 1.65rem 0.25rem 1.65rem 0.5rem;
+  font-size: 1.75rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: 1.5px rgb(29, 29, 29) solid;
+  border-right: 0;
+  margin-right: 0;
+  transition: 0.25s all ease;
+}
+#search-bar:focus {
+  outline: none;
+  transform: scale(1.05);
+}
+#search-bar-label{
+  display: flex; 
+  align-items: center;
+}
+#search-bar:focus + #search-bar-label{
+  transform: scale(1.05) ;
+
+}
+#searchImg {
+  height: 2.8rem;
+  padding: 0.25rem;
+  margin: 0;
+  margin-left: -0.1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  border: 1.5px rgb(33, 29, 29) solid;
+  background-color: white;
+  border-left: 0;
+}
+#searchImg:hover {
+  background-color: rgb(233, 233, 233);
+  cursor: pointer;
+}
+#search-bar-label{
+  transition: 0.25s ease;
+}
+.main-content {
+  margin: 4rem;
+}
+
+h1 {
+  color:rgb(0, 110, 255);
+  font-size: 2.1rem;
+  margin: 3em 0.5rem 0em;
+}
+
+
+.login_signup{
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  max-width: 90%;
+}
+
+.login_signup>div{
+  border: 2px solid rgb(0, 110, 255);
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  padding: 4rem;
+}
+.login_signup>div h1{
+  padding: 0;
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+}
+
+.name_pass{
+  margin: 2.25rem 0;
+}
+
+.name_pass label{
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.name_pass input{
+  width: 80%;
+  height: 1.75rem;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+}
+
+.login_signup button{
+  font-size: 1.5rem;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  border-radius: 0.25rem;
+  padding:0.5rem;
+  margin: 0.5rem;
+  background-color: rgb(0, 110, 255);
+  transition: 0.25s ease;
+}
+
+.login_signup button:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0px 5px 10px rgb(80, 80, 80);
+}
+
+.login_signup p{
+  font-size: 1.25rem;
+}
+
+.login_signup p{
+  margin-top: 3rem;
+}
+
+#errorMsg{
+  color: red;
+  font-size: 1.25rem;
+}
+#successMsg{
+  color: green;
+  font-size: 1.25rem;
+}
+
+#Add_recipe_button, #Upload_recipe_button, #cancel_upload{
+  font-size: 1.5rem;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  border-radius: 0.25rem;
+  padding:0.5rem;
+  margin: 0.5rem;
+  background-color: rgb(0, 110, 255);
+  transition: 0.25s ease;
+}
+
+#cancel_upload{
+  margin-right: 2rem;
+}
+
+#Add_recipe_button:hover, #Upload_recipe_button:hover, #cancel_upload:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px rgb(80, 80, 80);
+}
+
+#user{
+  color: rgb(0, 110, 255);
+  margin: 1rem 0.5rem;
+}
+
+#user span{
+  color: rgb(35, 190, 0);
+}
+
+#user_and_button{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+#form{
+  display: none;
+  max-width: 1000px;
+}
+
+.Form_Part {
+  margin: 1.25rem;
+}
+
+.Form_Part label{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.Form_Part input{
+  width: 100%;
+  height: 1.75rem;
+  margin: 0;
+  color: rgb(66, 69, 71);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+  
+}
+
+.Form_Part textarea{
+  width: 100%;
+  font-size: 1.25rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+#Form_Image{
+  border: 0;
+  margin: 10px;
+  padding: 1rem;
+  width:min-content;
+  background-color: rgb(253, 250, 246);
+}
+
+.results{
+  display: flex;
+  flex-wrap:wrap;
+  padding-top: 1.5rem;
+  
+}
+
+.recipe-card{
+  display: flex;
+  flex-direction: column;
+  width:20rem;
+  margin: 2rem;
+  border: 1px solid black;
+  background-color: rgb(232, 232, 232);
+  border-radius: 15px;
+  padding : 0.0rem;
+  transition: 0.35s ease;
+}
+
+.recipe-card:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0px 3px 10px rgb(63, 63, 63);
+}
+
+.container-img {
+  position: relative;
+  width: 100%;
+}
+
+.recipe-card-image{
+  display: block;
+  width: 97.5%;
+  height: 19.5rem;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  border: 1px solid white;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+
+.recipe-card-info{
+  flex-grow: 1;
+}
+.recipe-card-recipeName{
+  font-size: 2.25rem;
+  font-family: 'Grape Nuts', cursive;
+  color : rgb(0, 110, 255);
+  margin: 0;
+  padding: 10px;
+}
+
+.recipe-card-keyIngredients{
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 10px;
+}
+
+.recipe-card-keyIngredients span{
+  font-weight: 700;
+  
+}
+
+.recipe-card-uploader{
+  font-size: 1.2rem;
+  padding: 5px 20px;
+  margin-left:auto;
+}
+
+.recipe-card-uploader span{
+  color: rgb(35, 190, 0);
+  text-decoration: underline;
+}
+
+
+
+
+.recipe-recipeName{
+  font-size: 4rem;
+  font-family:'Ubuntu', sans-serif;
+  color : rgb(0, 110, 255);
+  margin: 1rem 0;
+}
+
+.recipe-image{
+  display: block;
+  width: 45rem;
+  height: 35rem;
+  border-radius: 10px;
+  margin: 2.5rem auto;
+  border: 2px solid rgb(255, 255, 255);
+  
+}
+
+.recipe-keyIngredients, .recipe-description, .recipe-procedure, .recipe-uploader{
+  margin: 2.5rem 0;
+  color:rgb(111, 111, 111);
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.65rem;
+  text-wrap: wrap;
+}
+
+.recipe-keyIngredients span, .recipe-description span, .recipe-procedure span, .recipe-uploader span{
+  font-size: 2rem;
+  color:rgb(0, 110, 255);
+}
+
+.recipe-uploader a, .recipe-uploader a:visited{
+  color:rgb(111, 111, 111);
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 2em;
+  }
+  #nav-right a {
+    margin: 1rem ;
+  }
+  .recipe-card{
+    width:17rem;
+  }
+  .recipe-card-keyIngredients, .recipe-card-uploader{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .recipe-card-image{
+    width: 97.5%;
+    height: 16.5rem;
+  }
+  .results{
+    justify-content: space-around;
+    
+  }
+  .recipe-recipeName{
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 1.5em;
+  }
+  #nav-right {
+    margin: auto;
+  }
+  #nav-right a {
+    margin: 1rem;
+  }
+  .main-content {
+    margin: 1rem;;
+  }
+  #user{
+    font-size: 2rem;
+  }
+  #search-bar {
+    width: 65%;
+  }
+  #Add_recipe_button, #Upload_recipe_button, #cancel_upload{
+    font-size: 0.75em;
+  }
+  .recipe-card-recipeName{
+    font-size: 2rem;
+  }
+  .recipe-card-image{
+    width: 97.5%;
+    height: 15.5rem;
+  }
+  .recipe-recipeName{
+    margin-top: 4rem;
+  }
+  .recipe-image{
+    width: 35rem;
+    height: 27.5rem;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  #root {
+    font-size: 1px;
+  }
+  p{
+    font-size: 1.5rem;
+  }
+  h1{
+    font-size: 1.75rem;
+    margin-top: 3.5rem;
+    margin-bottom: 0;
+
+  }
+  #user{
+    font-size: 1.5rem;
+  }
+  #nav-right{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #nav-right a {
+    margin: 0rem 1rem;
+  }
+  #WebName a {
+    padding: 0;
+  }
+  .Form_Part textarea{
+    width: 100%;
+  }
+  .Form_Part input{
+    width: 100%;
+  }
+  .login_signup>div{
+    padding: 1rem;
+  }
+  #search-bar {
+    width: 75%;
+    font-size: 1.25rem;
+    height: 2.5rem;
+    padding: 1.1rem;
+    padding-right: 0rem;
+  }
+  #searchImg {
+    height: 1.85rem;
+  }
+  
+  #cancel_upload{
+    margin-right: 0.75rem;
+  }
+  #Add_recipe_button, #Upload_recipe_button, #cancel_upload{
+    font-size: 1rem;
+  }
+  .recipe-image{
+    width: 25rem;
+    height: 20rem;
+  }
+  .recipe-keyIngredients, .recipe-description, .recipe-procedure, .recipe-uploader{
+    font-size: 1.25rem;
+  }
+  .recipe-keyIngredients span, .recipe-description span, .recipe-procedure span, .recipe-uploader span{
+    font-size: 1.5rem;
+  }
+  .recipe-recipeName{
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #WebName a{
+    font-size: 2.5rem;
+  }
+  #nav-right a{
+    font-size: 25em;
+  }
+  #ChefImg{
+    width: 2rem;
+    height: 2rem;
+  }
+  .Form_Part textarea{
+    font-size: 1rem;
+    height: 5rem;
+
+  }
+  .Form_Part label{
+    font-size: 1rem;
+  }
+  .Form_Part input{
+    font-size: 0.75rem;
+    border: 1px black solid;
+  }
+  .name_pass input{
+    border: 1px black solid;
+  }
+  .login_signup>div{
+    border: 1px black solid;
+  }
+  .login_signup button{
+    border: 1px black solid;
+    font-size: 1.45rem;
+  }
+  .recipe-image{
+    width: 95%;
+    height: 20rem;
+  }
+  .recipe-card-recipeName{
+    margin-top: 0.05rem;
+    font-size: 1.75rem;
+  }
+  .recipe-card{
+    width: 15rem;
+    margin: 1.25rem;
+  }
+  .recipe-card-keyIngredients, .recipe-card-uploader{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+  .recipe-card-uploader p{
+    font-size: 1rem ;
+  }
+  .recipe-card-image{
+    width: 97.5%;
+    height: 13.25rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.05rem;
+  }
+  
+}
