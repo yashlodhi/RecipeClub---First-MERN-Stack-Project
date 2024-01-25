@@ -23,12 +23,7 @@ mongoose
 app.use(express.json({limit:"150mb"}));
 app.use(express.urlencoded({ extended: true, limit:"150mb"}));
 
-// MKAE origin: true for localhost 
-app.use(cors({
-  origin: 'https://recipeclub.onrender.com',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-}));
+app.use( cors() ) ;
 
 
 
