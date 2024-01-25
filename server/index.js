@@ -25,9 +25,11 @@ app.use(express.urlencoded({ extended: true, limit:"150mb"}));
 
 // MKAE origin: true for localhost 
 app.use(cors({
-  origin: "https://recipeclub.onrender.com" ,
+  origin: 'https://recipeclub.onrender.com',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
 }));
+
 
 
 
