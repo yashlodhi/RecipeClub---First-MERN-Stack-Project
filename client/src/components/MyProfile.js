@@ -50,7 +50,7 @@ function MyProfile(props) {
     formData["procedure"] = procedure;
     formData["img"] = img;
 
-    await axios.post("http://localhost:8000/myprofile", formData)
+    await axios.post("https://recipeclub-backend.onrender.com/myprofile", formData)
       .then((response) => {
         setMsg(response.data.msg);
         setUploadSuccess(response.data.uploadSuccess);
