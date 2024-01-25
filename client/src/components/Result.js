@@ -14,7 +14,7 @@ function Result(props) {
     async function fetchData() {
       setMsg("Loading...")  ;
       await axios
-        .get(`http://localhost:8000/search?user=${user}&keyWord=${keyWord}`)
+        .get(`https://recipeclub-backend.onrender.com/search?user=${user}&keyWord=${keyWord}`)
         .then((response) => {
           setrecipes(response.data.recipes);
           setMsg(response.data.msg);
