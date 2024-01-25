@@ -17,7 +17,7 @@ function Signup() {
             if(password.length<8) setSmallPassword(true);
             else{
                 setSmallPassword(false);  
-                await axios.post("http://localhost:8000/signup",{username, password})
+                await axios.post("https://recipeclub-backend.onrender.com/signup",{username, password})
                 .then((res)=>{
                     let msg1  = res.data.msg;
                     setIsError(res.data.isError);
