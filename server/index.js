@@ -30,7 +30,10 @@ app.use( cors({
 
 
 
-app.get("/", (req, res) => {});
+
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
 
 app.post("/login", async (req, res) => {
 
