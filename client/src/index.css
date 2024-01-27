@@ -5,11 +5,9 @@ body {
   padding: 0;
   font-size: 2em;
   font-family: "Quicksand", sans-serif;
-  background: rgb(253, 253, 253);
-  background-color: rgb(253, 250, 246);
+  background-color: rgb(255, 249, 240);
   overflow-y: scroll;
-  /* background: linear-gradient(90deg, rgba(251,255,0,1) 0%, rgba(246,255,144,1) 29%, rgba(248,255,206,1) 51%, rgba(246,255,144,1) 75%, rgba(251,255,0,1) 100%); */
-}
+  }
 
 ::selection{
   background-color: rgb(0, 110, 255);
@@ -25,6 +23,21 @@ body {
   padding: 0.75rem;
 }
 
+#WebName {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#WebName a {
+  color: rgb(255, 255, 0);
+  font-size: 3rem;
+  font-family: "Signika Negative", sans-serif;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
 #nav-right {
   display: flex;
   justify-content: center;
@@ -32,7 +45,7 @@ body {
   padding-top: 0.75rem;
 }
 
-#nav-right a {
+#nav-right a , #Navbar_Options a {
   display: flex;
   flex-direction: column;
   margin: 0rem 3rem;
@@ -51,25 +64,63 @@ body {
   width: 0%;
   transition: 0.25s ease;
 }
-#nav-right a:hover {
+
+#nav-right a:hover, #Navbar_Options a:hover {
   transform: scale(1.075);
 }
+
 #nav-right a:hover::after {
   width: 100%;
 }
-#WebName {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
+
+#Menu_Bar_Icon{
+  display: none;
+  width: 2.75em ; 
+  height: 2.75em ; 
+  margin: auto 1vw;
+  border: 0.1em solid rgb(255, 249, 240) ; 
+  border-radius: 0.5em;
+  transition: 0.35s ease-in-out;
+}
+#Menu_Bar_Icon:hover{
+  cursor: pointer;
+}
+.Menu_Bar_Active{
+  border: 0.1em solid white !important; 
+  transform: rotate(-90deg);
 }
 
-#WebName a {
-  color: rgb(255, 255, 0);
-  font-size: 3rem;
-  font-family: "Signika Negative", sans-serif;
-  padding: 0.5rem;
-  text-decoration: none;
+.main-section{
+  position: relative;
+  margin: 0;
+  padding-top: 1rem;
+}
+#Navbar_Options{
+  position: absolute;
+  display: inline-block;
+  width: 60%;
+  max-width: 0%;
+  padding-bottom: 0.5em;
+  color: rgb(212, 212, 212); 
+  right: 0em ; 
+  top : 0em ; 
+  font-size: 2vw;
+  border-bottom-left-radius: 0.35em;
+  border: 0.25px solid white;
+  border-right: 0px;
+  transition: 0.35s max-width ease-in-out ;
+  z-index: 3;
+}
+#Navbar_Options div{
+  display: none ;
+  width: fit-content;
+  margin:  7em auto;
+  padding-bottom: 0.5em;
+  text-align: center;
+  white-space: nowrap;
+}
+#Navbar_Options a{
+border-bottom: 2px solid white;
 }
 
 
@@ -78,6 +129,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   margin: 1rem;
+  margin-top: 0;
 }
 #search-bar {
   text-align: center;
@@ -367,9 +419,6 @@ h1 {
   text-decoration: underline;
 }
 
-
-
-
 .recipe-recipeName{
   font-size: 4rem;
   font-family:'Ubuntu', sans-serif;
@@ -407,12 +456,24 @@ h1 {
 
 
 
+
+
+
+
+
+
+@media screen and (max-width: 1330px) {
+  #nav-right a {
+    margin: 0 1.25rem ;
+  }
+}
+
+
+
+
 @media screen and (max-width: 1000px) {
   body {
     font-size: 2em;
-  }
-  #nav-right a {
-    margin: 1rem ;
   }
   .recipe-card{
     width:17rem;
@@ -436,15 +497,35 @@ h1 {
   }
 }
 
+
+
+
+@media screen and (max-width: 850px) {
+  #nav-right {
+   display: none;
+  }
+  #Menu_Bar_Icon{
+    display: inline-block;
+    font-size: 0.8rem;
+  }
+  .Navbar_Options_Active{
+    max-width: 60% !important;
+    background-color: rgb(0, 110, 255);
+  }
+  .Navbar_Options_Active div{
+    display: flex !important;
+  }
+  #Navbar_Options a{
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
 @media screen and (max-width: 800px) {
   body {
     font-size: 1.5em;
-  }
-  #nav-right {
-    margin: auto;
-  }
-  #nav-right a {
-    margin: 1rem;
   }
   .main-content {
     margin: 1rem;;
@@ -475,6 +556,8 @@ h1 {
 }
 
 
+
+
 @media screen and (max-width: 600px) {
   #root {
     font-size: 1px;
@@ -490,14 +573,6 @@ h1 {
   }
   #user{
     font-size: 1.5rem;
-  }
-  #nav-right{
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #nav-right a {
-    margin: 0rem 1rem;
   }
   #WebName a {
     padding: 0;
@@ -519,9 +594,8 @@ h1 {
     padding-right: 0rem;
   }
   #searchImg {
-    height: 1.85rem;
+    height: 1.825rem;
   }
-  
   #cancel_upload{
     margin-right: 0.75rem;
   }
@@ -543,12 +617,15 @@ h1 {
   }
 }
 
+
+
+
 @media screen and (max-width: 400px) {
   #WebName a{
     font-size: 2.5rem;
   }
-  #nav-right a{
-    font-size: 25em;
+  #Navbar_Options a{
+    font-size: 1.5rem;
   }
   #ChefImg{
     width: 2rem;
@@ -604,5 +681,6 @@ h1 {
     margin-top: 0.2rem;
     margin-bottom: 0.05rem;
   }
+  
   
 }
